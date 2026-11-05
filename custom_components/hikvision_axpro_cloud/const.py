@@ -1,0 +1,12 @@
+"""Costanti dell'integrazione."""
+DOMAIN = "hikvision_axpro_cloud"
+CONF_ACCOUNT = "account"
+CONF_PASSWORD = "password"
+CONF_SERIAL = "serial"
+CONF_SCAN_INTERVAL = "scan_interval"
+CONF_CODE = "code"
+CONF_FEATURE_CODE = "feature_code"
+CONF_ARM_HOME = "arm_home"
+DEFAULT_SCAN_INTERVAL = 30
+MANUFACTURER = "Hikvision"
+MODEL = "AX PRO (cloud)"

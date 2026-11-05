@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hikvision AX PRO (Cloud)",
+        "description": "Enter your Hik-Connect account credentials (the same you use in the app). Works both for panels you own and panels shared with you.",
+        "data": {
+          "account": "Hik-Connect email or username",
+          "password": "Hik-Connect password"
+        }
+      },
+      "select_panel": {
+        "title": "Choose the panel",
+        "description": "Several devices were found on this account: choose the alarm panel to add. Repeat the setup to add another one.",
+        "data": {
+          "serial": "Panel"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Authentication expired",
+        "description": "Re-enter your Hik-Connect account password.",
+        "data": {
+          "password": "Hik-Connect password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Wrong email or password.",
+      "cannot_connect": "Cannot reach the Hik-Connect cloud. Check the logs for details.",
+      "no_panels": "No devices found on this Hik-Connect account.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This panel is already configured.",
+      "reauth_successful": "Authentication updated.",
+      "panel_not_accessible": "The panel was found but its alarm functions are not accessible with this account (check the user permissions in the Hik-Connect app, and the logs)."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "AX PRO options",
+        "data": {
+          "scan_interval": "Update interval (seconds)",
+          "code": "PIN code",
+          "arm_home": "Enable Stay (home) arming"
+        },
+        "data_description": {
+          "code": "Asked by Home Assistant before disarming. Leave empty for no code. It is not the panel's keypad code.",
+          "arm_home": "Adds the Stay arming button (zones configured as 'stay' on the panel stay off)."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery": {
+        "name": "Battery"
+      },
+      "mobile_signal": {
+        "name": "Mobile signal"
+      },
+      "sim_operator": {
+        "name": "SIM operator"
+      },
+      "data_flow": {
+        "name": "Data usage"
+      },
+      "faults": {
+        "name": "Faults"
+      }
+    },
+    "binary_sensor": {
+      "ac_power": {
+        "name": "Mains power"
+      },
+      "tamper": {
+        "name": "Tamper"
+      },
+      "cloud": {
+        "name": "Cloud connection"
+      },
+      "mobile": {
+        "name": "Mobile connection"
+      }
+    }
+  }
+}

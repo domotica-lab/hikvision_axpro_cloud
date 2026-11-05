@@ -1,0 +1,1 @@
+"""Configurazione comune dei test."""

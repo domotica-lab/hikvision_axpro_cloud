@@ -1,0 +1,88 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Hikvision AX PRO (Cloud)",
+        "description": "Inserisci le credenziali del tuo account Hik-Connect (le stesse dell'app). Funziona sia con centrali di tua proprietà sia con centrali condivise con te.",
+        "data": {
+          "account": "Email o utente Hik-Connect",
+          "password": "Password Hik-Connect"
+        }
+      },
+      "select_panel": {
+        "title": "Scegli la centrale",
+        "description": "Sull'account ci sono più dispositivi: scegli la centrale da aggiungere. Ripeti la configurazione per aggiungerne un'altra.",
+        "data": {
+          "serial": "Centrale"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autenticazione scaduta",
+        "description": "Reinserisci la password del tuo account Hik-Connect.",
+        "data": {
+          "password": "Password Hik-Connect"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Email o password errate.",
+      "cannot_connect": "Impossibile contattare il cloud Hik-Connect. Controlla i log per i dettagli.",
+      "no_panels": "Nessun dispositivo trovato su questo account Hik-Connect.",
+      "unknown": "Errore imprevisto."
+    },
+    "abort": {
+      "already_configured": "Questa centrale è già configurata.",
+      "reauth_successful": "Autenticazione aggiornata.",
+      "panel_not_accessible": "La centrale è stata trovata ma le funzioni di allarme non sono accessibili con questo account (controlla i permessi dell'utente nell'app Hik-Connect e i log)."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni AX PRO",
+        "data": {
+          "scan_interval": "Intervallo di aggiornamento (secondi)",
+          "code": "Codice PIN",
+          "arm_home": "Abilita inserimento parziale (In casa)"
+        },
+        "data_description": {
+          "code": "Chiesto da Home Assistant prima di disinserire. Lascia vuoto per nessun codice. Non è il codice della tastiera della centrale.",
+          "arm_home": "Aggiunge il pulsante di inserimento parziale (le zone impostate come 'parziale' nella centrale restano escluse)."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "battery": {
+        "name": "Batteria"
+      },
+      "mobile_signal": {
+        "name": "Segnale mobile"
+      },
+      "sim_operator": {
+        "name": "Operatore SIM"
+      },
+      "data_flow": {
+        "name": "Consumo dati"
+      },
+      "faults": {
+        "name": "Guasti"
+      }
+    },
+    "binary_sensor": {
+      "ac_power": {
+        "name": "Alimentazione di rete"
+      },
+      "tamper": {
+        "name": "Manomissione"
+      },
+      "cloud": {
+        "name": "Connessione cloud"
+      },
+      "mobile": {
+        "name": "Connessione mobile"
+      }
+    }
+  }
+}
