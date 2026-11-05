@@ -1,6 +1,11 @@
 # Hikvision AX PRO (Cloud) for Home Assistant
 
 [![hacs](https://img.shields.io/badge/HACS-custom-orange.svg)](https://hacs.xyz)
+[![release](https://img.shields.io/github/v/release/domotica-lab/hikvision_axpro_cloud)](https://github.com/domotica-lab/hikvision_axpro_cloud/releases)
+[![validate](https://github.com/domotica-lab/hikvision_axpro_cloud/actions/workflows/validate.yml/badge.svg)](https://github.com/domotica-lab/hikvision_axpro_cloud/actions/workflows/validate.yml)
+
+[![Open your Home Assistant instance and open this repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=domotica-lab&repository=hikvision_axpro_cloud&category=integration)
+[![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=hikvision_axpro_cloud)
 
 Control a **Hikvision AX PRO** alarm panel from Home Assistant **through the
 Hik-Connect cloud** — no local network access to the panel needed.
@@ -36,6 +41,11 @@ whether it works or not.
 ## Installation
 
 ### HACS (recommended)
+One click (needs HACS installed):
+
+[![Open your Home Assistant instance and open this repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=domotica-lab&repository=hikvision_axpro_cloud&category=integration)
+
+Or by hand:
 1. HACS → ⋮ → **Custom repositories** → add `https://github.com/domotica-lab/hikvision_axpro_cloud`,
    category **Integration**.
 2. Install **Hikvision AX PRO (Cloud)** and restart Home Assistant.
@@ -46,7 +56,11 @@ Copy `custom_components/hikvision_axpro_cloud` into your
 
 ## Setup
 
-**Settings → Devices & services → Add integration → "Hikvision AX PRO (Cloud)"**,
+After installing and restarting, click:
+
+[![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=hikvision_axpro_cloud)
+
+or go to **Settings → Devices & services → Add integration → "Hikvision AX PRO (Cloud)"**,
 then enter your Hik-Connect email (or username) and password — the same you use in
 the app. If the account has several devices you will be asked which one to add.
 
@@ -98,7 +112,12 @@ disinserimento, sensori diagnostici (batteria, segnale, operatore SIM, consumo
 dati, guasti, alimentazione, manomissione, connessioni), più centrali sullo stesso
 account.
 
-**Installazione:** HACS → ⋮ → *Repository personalizzati* →
+**Installazione con un clic** (serve HACS), poi riavvia e configura:
+
+[![Open your Home Assistant instance and open this repository inside HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=domotica-lab&repository=hikvision_axpro_cloud&category=integration)
+[![Open your Home Assistant instance and start setting up the integration.](https://my.home-assistant.io/badges/config_flow_start.svg)](https://my.home-assistant.io/redirect/config_flow_start/?domain=hikvision_axpro_cloud)
+
+**Installazione manuale:** HACS → ⋮ → *Repository personalizzati* →
 `https://github.com/domotica-lab/hikvision_axpro_cloud` (categoria *Integration*),
 installa e riavvia. Oppure copia `custom_components/hikvision_axpro_cloud` in
 `config/custom_components/`.
