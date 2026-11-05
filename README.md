@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="custom_components/hikvision_axpro_cloud/brand/dark_logo@2x.png">
+    <img alt="AX PRO Cloud" src="custom_components/hikvision_axpro_cloud/brand/logo@2x.png" height="96">
+  </picture>
+</p>
+
 # Hikvision AX PRO (Cloud) for Home Assistant
 
 [![hacs](https://img.shields.io/badge/HACS-custom-orange.svg)](https://hacs.xyz)
