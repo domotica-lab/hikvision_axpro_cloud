@@ -1,0 +1,47 @@
+name: Release
+
+# Crea tag e release quando cambia la versione in manifest.json,
+# solo dopo che "Validate" (hassfest, HACS, test) è passato su main.
+on:
+  workflow_run:
+    workflows: [Validate]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Leggi la versione
+        id: v
+        run: |
+          VERSION=$(jq -r .version custom_components/hikvision_axpro_cloud/manifest.json)
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+          if git rev-parse -q --verify "refs/tags/v$VERSION" >/dev/null; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            echo "La release v$VERSION esiste già: niente da fare."
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Crea la release
+        if: steps.v.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${{ steps.v.outputs.tag }}" \
+            --target "$(git rev-parse HEAD)" \
+            --title "${{ steps.v.outputs.tag }}" \
+            --generate-notes
